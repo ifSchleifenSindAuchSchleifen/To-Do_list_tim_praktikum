@@ -129,7 +129,7 @@ button:hover {
 }
 
 .char-counter.over-limit::before {
-  content: 'Character limit exceeded: ';
+  content: 'Zeichenlimmit überschritten: ';
 }
 
 #submit.over-limit {
