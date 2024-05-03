@@ -17,7 +17,7 @@ class TodoManager {
   // Methode zum Hinzufügen eines neuen To-Dos
   addTodo() {
     const todoInput = this.todoInput;
-    if (todoInput.value != '') {
+    if (todoInput.value.trim() !== '' && todoInput.value.trim().length <= 22) {
       // Erstellt ein neues To-Do-Element und fügt es der Liste hinzu
       const newTask = document.createElement('div');
       const newButton = document.createElement('button');
@@ -32,6 +32,8 @@ class TodoManager {
       this.setLocalStorage();
       todoInput.value = '';
       this.updateCharCounter();
+    } else {
+      console.log('no input')
     }
   }
 
@@ -85,26 +87,29 @@ class TodoManager {
 
   // Methode zur Aktualisierung des Charakterzählers
   updateCharCounter() {
+    // Trimmt den Input und holt die maximale Länge
+    const trimmedValue = this.todoInput.value.trim();
     const maxLength = parseInt(this.todoInput.getAttribute('maxlength'));
-    const currentLength = this.todoInput.value.length;
+    const currentLength = trimmedValue.length;
     this.charCounter.textContent = `${currentLength}/22`;
 
     // Prüft, ob die Zeichenlänge das Limit überschreitet und fügt entsprechende Klasse hinzu oder entfernt sie
     if (currentLength > 22) {
-      this.charCounter.classList.add('over-limit');
-      this.submitButton.classList.add('over-limit');
+        this.charCounter.classList.add('over-limit');
+        this.submitButton.classList.add('over-limit');
     } else {
-      this.charCounter.classList.remove('over-limit');
-      this.submitButton.classList.remove('over-limit');
+        this.charCounter.classList.remove('over-limit');
+        this.submitButton.classList.remove('over-limit');
     }
 
     // Prüft ob es input gibt
     if (currentLength > 0) {
-      this.submitButton.classList.add('Input');
+        this.submitButton.classList.add('Input');
     } else {
-      this.submitButton.classList.remove('Input');
+        this.submitButton.classList.remove('Input');
     }
-  }
+}
+
 
   // Methode zur Behandlung der Enter-Taste
   handleKeyPress(event) {
