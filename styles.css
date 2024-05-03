@@ -35,6 +35,10 @@ h2 {
   border-radius: 4px 0 0 4px;
 }
 
+input:focus {
+  outline: none;
+}
+
 #submit {
   padding: 10px 20px;
   font-size: 16px;
@@ -122,7 +126,7 @@ button:hover {
 
 .char-counter {
   position: absolute;
-  bottom: -15px;
+  bottom: -20px;
   right: 5px;
   font-size: 12px;
   color: #999;
