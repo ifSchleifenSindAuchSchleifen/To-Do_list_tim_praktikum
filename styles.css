@@ -1,0 +1,147 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #343a40;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+#todoForm {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+#todoInput {
+  width: calc(100%-60px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px 0 0 4px;
+}
+
+#submit {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: grey;
+  border-color: grey;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+#submit.input:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0px;
+}
+
+button.done,
+button.delete {
+  width: 90%;
+}
+
+button.delete {
+  width: 10%;
+}
+
+.submit {
+  width: 10%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:last-child {
+  margin-bottom: 0;
+}
+
+button:hover {
+  background-color: #f1f1f1;
+}
+
+.done {
+  color: #868e96;
+  text-decoration: line-through;
+}
+
+#doneList {
+  opacity: 0.6;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+#credits {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #868e96;
+}
+
+.input-container {
+  position: relative;
+}
+
+#todoInput {
+  padding-right: 50px;
+}
+
+.char-counter {
+  position: absolute;
+  bottom: -15px;
+  right: 5px;
+  font-size: 12px;
+  color: #999;
+}
+
+.char-counter.over-limit::before {
+  content: 'Character limit exceeded: ';
+}
+
+#submit.over-limit {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.char-counter.over-limit {
+  color: #dc3545;
+}
+
+#submit.Input {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
