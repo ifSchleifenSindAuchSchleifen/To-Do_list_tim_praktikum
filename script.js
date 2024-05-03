@@ -103,7 +103,7 @@ class TodoManager {
     }
 
     // Prüft ob es input gibt
-    if (currentLength > 0) {
+    if (currentLength > 0 && currentLength <= 22) {
         this.submitButton.classList.add('Input');
     } else {
         this.submitButton.classList.remove('Input');
